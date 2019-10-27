@@ -7,8 +7,8 @@ import pandas as pd
 
 url = "https://www.youtube.com/playlist?v=RE87rQkXdNw&list=PLEMoDqX-7M9R5oGS8_g_o3a5BpRiWo5El"
 data = requests.get(url)
-soup = BeautifulSoup(data.text, "html5lib")
-title = []
+soup = BeautifulSoup(data.text, "html5lib") #creating soup object
+title = [] #extracting title clips.
 for i in soup.find_all('tr'):
     title.append(i.get('data-title'))
 links = []
